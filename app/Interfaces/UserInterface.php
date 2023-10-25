@@ -1,0 +1,74 @@
+<?php
+
+namespace App\Interfaces;
+
+use Waad\Repository\Interfaces\BaseInterface;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
+
+interface UserInterface extends BaseInterface
+{
+
+    /**
+     * index
+     *
+     * @param Request $request
+     * @param string|null $trash
+     * @param bool|null $QueryBilderEnable
+     * @return \Illuminate\Pagination\LengthAwarePaginator
+     */
+    public function index(Request $request, string|null $trash = null, bool|null $QueryBilderEnable = true);
+
+    /**
+     * show
+     *
+     * @param Model|int|string $object
+     * @param bool|null $trash
+     * @param bool|null $enableQueryBuilder
+     * @return Model|null
+     */
+    public function show(Model|int|string $object, bool|null $trash = false, bool|null $enableQueryBuilder = true);
+
+    /**
+     * store
+     *
+     * @param array $data
+     * @param bool|null $is_object
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function store(array $data, bool|null $is_object = true);
+
+    /**
+     * update
+     *
+     * @param array $values
+     * @param Model|int|string $object
+     * @param bool|null $getObject
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function update(array $values, Model|int|string $object, bool|null $getObject = false);
+
+    /**
+     * destroy
+     *
+     * @param Model|int|string $object
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function destroy(Model|int|string $object);
+
+    /**
+     * delete
+     *
+     * @param Model|int|string $object
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function delete(Model|int|string $object);
+
+    /**
+     * restore
+     *
+     * @param Model|int|string $object
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function restore(Model|int|string $object);
+}
