@@ -69,3 +69,85 @@ Use url to enter to docs of `API`
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Project Data Hierarchy
+
+```yaml
+Workspace 1:
+  - Users:
+    - User 1
+    - User 2
+
+  - Projects:
+    - Project 1:
+      - Users:
+        - User 1
+      - Tasks:
+        - Task 1:
+          - Users:
+            - User 1
+            - User 2
+          - Attachments:
+            - Attachment 1
+            - Attachment 2
+          - Comments:
+            - Comment 1:
+              - Media:
+                - Media 1
+                - Media 2
+            - Comment 2:
+              - Media:
+                - Media 3
+          - SubTask 1:
+            - Users:
+              - User 1
+            - Attachments:
+              - Attachment 3
+            - Comments:
+              - Comment 3:
+                - Media:
+                  - Media 4
+        - Task 2:
+          - Users:
+            - User 2
+            - User 3
+          - Attachments:
+            - Attachment 4
+            - Attachment 5
+          - Comments:
+            - Comment 4:
+              - Media:
+                - Media 5
+                - Media 6
+          - SubTask 2:
+            - Users:
+              - User 3
+            - Attachments:
+              - Attachment 6
+            - Comments:
+              - Comment 5:
+                - Media:
+                  - Media 7
+
+Workspace 2:
+  - Users:
+    - User 3
+    - User 4
+
+  - Projects:
+    - Project 2:
+      - Users:
+        - User 4
+      - Tasks:
+        - Task 3:
+          - Users:
+            - User 3
+          - Attachments:
+            - Attachment 7
+            - Attachment 8
+          - Comments:
+            - Comment 6:
+              - Media:
+                - Media 8
+
+```
